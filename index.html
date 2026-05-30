@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IncomingTax · Gestión fiscal para autónomos y pymes</title>
-  <meta name="description" content="IncomingTax digitaliza la gestión de tus facturas, IVA e IRPF. Diseñado para autónomos y pequeñas empresas en España." />
-  <meta property="og:title" content="IncomingTax · Gestión fiscal inteligente" />
-  <meta property="og:description" content="Sube tus facturas, calcula tu IVA y prepara tus declaraciones trimestrales en minutos." />
-  <meta property="og:image" content="https://www.incomingtax.com/og-image.png" />
+  <title>IncomingTax · Gestión fiscal con IA para autónomos y pymes</title>
+  <meta name="description" content="IncomingTax digitaliza y automatiza tu gestión fiscal con inteligencia artificial. Sube facturas arrastrando, controla cobros, gastos y ventas en tiempo real. Verifactu integrado." />
+  <meta property="og:title" content="IncomingTax · El copiloto fiscal de tu empresa" />
+  <meta property="og:description" content="IA que lee tus facturas, Verifactu integrado, panel de cobros y pagos en tiempo real. Pruébalo gratis." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
@@ -19,159 +18,441 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#00BFA6"/><path d="M8 20L14 8L20 20" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16.5H18" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <svg class="nav__logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="10" fill="url(#lg)"/>
+          <path d="M9 23L16 9L23 23" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.5 18.5H20.5" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+          <defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#00D4B8"/><stop offset="1" stop-color="#00A3FF"/></linearGradient></defs>
+        </svg>
         <span>IncomingTax</span>
       </a>
       <nav class="nav__links">
         <a href="#funciones">Funciones</a>
-        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#ia">Inteligencia artificial</a>
+        <a href="#verifactu">Verifactu</a>
         <a href="#precios">Precios</a>
-        <a href="#contacto">Contacto</a>
       </nav>
-      <div class="nav__cta">
-        <a href="https://app.incomingtax.com" class="btn btn--ghost">Acceder</a>
-        <a href="#precios" class="btn btn--primary">Empezar gratis</a>
+      <div class="nav__actions">
+        <a href="https://incomingtax.netlify.app" class="btn btn--ghost btn--sm">Iniciar sesión</a>
+        <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--sm">Probar gratis →</a>
       </div>
-      <button class="nav__burger" id="burger" aria-label="Menú">
+      <button class="burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
     <div class="nav__mobile" id="mobileMenu">
       <a href="#funciones">Funciones</a>
-      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#ia">Inteligencia artificial</a>
+      <a href="#verifactu">Verifactu</a>
       <a href="#precios">Precios</a>
-      <a href="#contacto">Contacto</a>
-      <a href="https://app.incomingtax.com" class="btn btn--ghost">Acceder</a>
-      <a href="#precios" class="btn btn--primary">Empezar gratis</a>
+      <a href="https://incomingtax.netlify.app" class="btn btn--ghost">Iniciar sesión</a>
+      <a href="https://incomingtax.netlify.app" class="btn btn--primary">Probar gratis →</a>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__bg"></div>
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--3"></div>
     <div class="container hero__inner">
-      <div class="hero__badge">🇪🇸 Adaptado a la normativa española</div>
-      <h1 class="hero__title">Olvídate del papeleo fiscal.<br><span class="gradient-text">Nosotros lo gestionamos.</span></h1>
-      <p class="hero__sub">Sube tus facturas, calcula tu IVA e IRPF y prepara tus declaraciones trimestrales en minutos. Sin hojas de cálculo, sin errores.</p>
-      <div class="hero__actions">
-        <a href="#precios" class="btn btn--primary btn--lg">Empezar gratis →</a>
-        <a href="#como-funciona" class="btn btn--ghost btn--lg">Ver cómo funciona</a>
+      <a href="#funciones" class="hero__pill">
+        <span class="pill__dot"></span>
+        Nuevo · Verifactu AEAT integrado
+        <span class="pill__arrow">→</span>
+      </a>
+      <h1 class="hero__title">
+        Tu gestoría fiscal<br>
+        <span class="hero__title-gradient">con inteligencia artificial</span>
+      </h1>
+      <p class="hero__sub">
+        Arrastra tus facturas y nuestra IA las lee, clasifica y contabiliza sola. Control total de cobros, pagos, IVA e IRPF — en tiempo real, desde cualquier dispositivo.
+      </p>
+      <div class="hero__cta">
+        <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--xl">
+          Empezar gratis
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#demo" class="btn btn--ghost btn--xl">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 6.5L12 9L7 11.5V6.5Z" fill="currentColor"/></svg>
+          Ver demo
+        </a>
       </div>
-      <p class="hero__note">Sin tarjeta de crédito · Cancela cuando quieras</p>
-      <div class="hero__screen">
-        <div class="mockup">
-          <div class="mockup__bar">
+      <p class="hero__disclaimer">Sin tarjeta de crédito · Cancela cuando quieras · 14 días gratis</p>
+
+      <!-- DASHBOARD MOCKUP -->
+      <div class="dashboard" id="demo">
+        <div class="dashboard__chrome">
+          <div class="chrome__dots">
             <span></span><span></span><span></span>
           </div>
-          <div class="mockup__body">
-            <div class="mockup__sidebar">
-              <div class="mock-item mock-item--active">📄 Facturas</div>
-              <div class="mock-item">📤 Subir</div>
-              <div class="mock-item">📊 Impuestos</div>
-              <div class="mock-item">⚙️ Ajustes</div>
+          <div class="chrome__url">app.incomingtax.com</div>
+          <div class="chrome__actions">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7a6 6 0 1 0 12 0A6 6 0 0 0 1 7Z" stroke="rgba(255,255,255,0.3)" stroke-width="1.2"/></svg>
+          </div>
+        </div>
+        <div class="dashboard__body">
+          <!-- Sidebar -->
+          <aside class="dash-sidebar">
+            <div class="dash-nav-item dash-nav-item--active">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity=".8"/><rect x="9" y="1" width="6" height="6" rx="1.5" fill="currentColor" opacity=".8"/><rect x="1" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".4"/><rect x="9" y="9" width="6" height="6" rx="1.5" fill="currentColor" opacity=".4"/></svg>
+              Panel
             </div>
-            <div class="mockup__content">
-              <div class="mock-header">Facturas recibidas</div>
-              <div class="mock-stats">
-                <div class="mock-stat">
-                  <div class="mock-stat__val">€ 12.450</div>
-                  <div class="mock-stat__lbl">Base imponible</div>
-                </div>
-                <div class="mock-stat">
-                  <div class="mock-stat__val teal">€ 2.614</div>
-                  <div class="mock-stat__lbl">IVA soportado</div>
-                </div>
+            <div class="dash-nav-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 2h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.3"/><path d="M5 6h6M5 9h4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Facturas
+            </div>
+            <div class="dash-nav-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v14M1 8h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Subir
+            </div>
+            <div class="dash-nav-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 12V5l6-3 6 3v7" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><rect x="6" y="8" width="4" height="4" rx=".5" stroke="currentColor" stroke-width="1.3"/></svg>
+              Impuestos
+            </div>
+            <div class="dash-nav-item">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.3"/><path d="M8 5v3.5l2 2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+              Cobros
+            </div>
+          </aside>
+          <!-- Main -->
+          <main class="dash-main">
+            <div class="dash-header">
+              <div>
+                <div class="dash-greeting">Buenos días, Carlos 👋</div>
+                <div class="dash-period">Resumen · Mayo 2025</div>
               </div>
-              <div class="mock-row"><span class="mock-dot teal"></span>Factura Amazon <span class="mock-amt">€ 48,40</span></div>
-              <div class="mock-row"><span class="mock-dot teal"></span>Hosting Digital Ocean <span class="mock-amt">€ 12,10</span></div>
-              <div class="mock-row"><span class="mock-dot orange"></span>Suministros oficina <span class="mock-amt">€ 230,00</span></div>
-              <div class="mock-row"><span class="mock-dot teal"></span>Software Canva Pro <span class="mock-amt">€ 14,99</span></div>
+              <div class="dash-upload-btn">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M4 4l3-3 3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M1 10v1.5A1.5 1.5 0 0 0 2.5 13h9A1.5 1.5 0 0 0 13 11.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                Subir facturas
+              </div>
             </div>
+            <!-- KPIs -->
+            <div class="kpi-grid">
+              <div class="kpi kpi--green">
+                <div class="kpi__label">Ingresos</div>
+                <div class="kpi__val">€ 28.450</div>
+                <div class="kpi__delta up">↑ 12% vs mes anterior</div>
+              </div>
+              <div class="kpi kpi--red">
+                <div class="kpi__label">Gastos</div>
+                <div class="kpi__val">€ 9.820</div>
+                <div class="kpi__delta down">↓ 3% vs mes anterior</div>
+              </div>
+              <div class="kpi kpi--blue">
+                <div class="kpi__label">IVA a pagar</div>
+                <div class="kpi__val">€ 3.907</div>
+                <div class="kpi__delta">Vence en 18 días</div>
+              </div>
+              <div class="kpi kpi--orange">
+                <div class="kpi__label">Pendiente cobro</div>
+                <div class="kpi__val">€ 5.200</div>
+                <div class="kpi__delta">4 facturas</div>
+              </div>
+            </div>
+            <!-- Recent invoices -->
+            <div class="invoice-table">
+              <div class="invoice-table__head">
+                <span>Factura</span>
+                <span>Proveedor</span>
+                <span>Importe</span>
+                <span>Estado</span>
+              </div>
+              <div class="invoice-row">
+                <span class="inv-num">F-2025-148</span>
+                <span class="inv-provider">
+                  <span class="inv-avatar" style="background:#3B82F6">A</span>
+                  Amazon Business
+                </span>
+                <span class="inv-amount">€ 284,40</span>
+                <span class="inv-badge inv-badge--ok">✓ Verifactu</span>
+              </div>
+              <div class="invoice-row">
+                <span class="inv-num">F-2025-147</span>
+                <span class="inv-provider">
+                  <span class="inv-avatar" style="background:#10B981">G</span>
+                  Google Workspace
+                </span>
+                <span class="inv-amount">€ 72,60</span>
+                <span class="inv-badge inv-badge--ok">✓ Verifactu</span>
+              </div>
+              <div class="invoice-row">
+                <span class="inv-num">F-2025-146</span>
+                <span class="inv-provider">
+                  <span class="inv-avatar" style="background:#F59E0B">T</span>
+                  Telefónica
+                </span>
+                <span class="inv-amount">€ 145,20</span>
+                <span class="inv-badge inv-badge--pending">⏳ Pendiente</span>
+              </div>
+              <div class="invoice-row">
+                <span class="inv-num">F-2025-145</span>
+                <span class="inv-provider">
+                  <span class="inv-avatar" style="background:#8B5CF6">C</span>
+                  Canva Pro
+                </span>
+                <span class="inv-amount">€ 14,99</span>
+                <span class="inv-badge inv-badge--ok">✓ Verifactu</span>
+              </div>
+            </div>
+          </main>
+        </div>
+        <!-- Drop overlay hint -->
+        <div class="drag-hint">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v10M6 7l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14v1.5A1.5 1.5 0 0 0 4.5 17h11A1.5 1.5 0 0 0 17 15.5V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Arrastra tus facturas aquí
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <div class="social-proof">
+    <div class="container social-proof__inner">
+      <span>Cumplimos con</span>
+      <div class="badge-row">
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Verifactu AEAT
+        </div>
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          SII compatible
+        </div>
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          RGPD
+        </div>
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Mod. 303 · 130 · 111
+        </div>
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          TicketBAI
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI SECTION -->
+  <section class="ai-section" id="ia">
+    <div class="container ai-section__inner">
+      <div class="ai-section__text">
+        <div class="label-chip label-chip--purple">Inteligencia Artificial</div>
+        <h2 class="section-title">Tu IA que lee,<br>clasifica y contabiliza</h2>
+        <p class="section-body">Olvídate de introducir datos a mano. Sube tus facturas arrastrándolas o haciéndoles una foto, y nuestra IA extrae automáticamente todos los campos: proveedor, fecha, base imponible, IVA, número de factura y más.</p>
+        <ul class="ai-list">
+          <li>
+            <div class="ai-list__icon">🧠</div>
+            <div>
+              <strong>Lectura automática de PDFs e imágenes</strong>
+              <span>Soporta facturas escaneadas, fotos con el móvil, PDFs nativos y tickets.</span>
+            </div>
+          </li>
+          <li>
+            <div class="ai-list__icon">🏷️</div>
+            <div>
+              <strong>Clasificación inteligente</strong>
+              <span>Aprende de tus patrones y clasifica el gasto por categoría automáticamente.</span>
+            </div>
+          </li>
+          <li>
+            <div class="ai-list__icon">⚡</div>
+            <div>
+              <strong>Drag & drop o cámara</strong>
+              <span>Arrastra desde tu ordenador o haz foto desde el móvil. En segundos está procesado.</span>
+            </div>
+          </li>
+          <li>
+            <div class="ai-list__icon">✅</div>
+            <div>
+              <strong>Revisión y corrección</strong>
+              <span>Revisa lo que extrajo la IA antes de confirmar. Siempre tienes el control.</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="ai-section__visual">
+        <div class="ai-card">
+          <div class="ai-card__header">
+            <div class="ai-status">
+              <span class="ai-pulse"></span>
+              IA procesando factura…
+            </div>
+          </div>
+          <div class="ai-card__body">
+            <div class="ai-doc">
+              <div class="ai-doc__thumb">
+                <svg width="40" height="52" viewBox="0 0 40 52" fill="none"><rect width="40" height="52" rx="4" fill="#1E2D45"/><path d="M8 14h24M8 20h24M8 26h16" stroke="rgba(255,255,255,0.2)" stroke-width="2" stroke-linecap="round"/><rect x="6" y="32" width="28" height="12" rx="3" fill="rgba(0,212,184,0.12)" stroke="rgba(0,212,184,0.3)" stroke-width="1"/><text x="20" y="41" text-anchor="middle" fill="#00D4B8" font-size="7" font-family="Inter">FACTURA</text></svg>
+              </div>
+              <div class="ai-doc__scan">
+                <div class="scan-line"></div>
+              </div>
+            </div>
+            <div class="ai-fields">
+              <div class="ai-field ai-field--done">
+                <span class="ai-field__label">Proveedor</span>
+                <span class="ai-field__val">Amazon Business</span>
+                <span class="ai-field__check">✓</span>
+              </div>
+              <div class="ai-field ai-field--done">
+                <span class="ai-field__label">Fecha</span>
+                <span class="ai-field__val">15/05/2025</span>
+                <span class="ai-field__check">✓</span>
+              </div>
+              <div class="ai-field ai-field--done">
+                <span class="ai-field__label">Base imponible</span>
+                <span class="ai-field__val">€ 235,00</span>
+                <span class="ai-field__check">✓</span>
+              </div>
+              <div class="ai-field ai-field--done">
+                <span class="ai-field__label">IVA (21%)</span>
+                <span class="ai-field__val">€ 49,35</span>
+                <span class="ai-field__check">✓</span>
+              </div>
+              <div class="ai-field ai-field--typing">
+                <span class="ai-field__label">Categoría</span>
+                <span class="ai-field__val ai-typing">Material oficina<span class="cursor">|</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="ai-card__footer">
+            <button class="ai-confirm-btn">Confirmar y guardar →</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- LOGOS / TRUST -->
-  <section class="trust">
-    <div class="container">
-      <p class="trust__label">Cumplimos con la normativa de</p>
-      <div class="trust__logos">
-        <div class="trust__logo">AEAT</div>
-        <div class="trust__logo">TicketBAI</div>
-        <div class="trust__logo">Verifactu</div>
-        <div class="trust__logo">SII</div>
-        <div class="trust__logo">RGPD</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FUNCIONES -->
+  <!-- FEATURES GRID -->
   <section class="features" id="funciones">
     <div class="container">
-      <div class="section-label">Funciones</div>
-      <h2 class="section-title">Todo lo que necesitas,<br>en un solo lugar</h2>
-      <p class="section-sub">Diseñado para autónomos y pymes que quieren llevar sus cuentas al día sin depender de gestorías costosas.</p>
-      <div class="features__grid">
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#E8FDF9">📄</div>
-          <h3>Facturas inteligentes</h3>
-          <p>Sube PDFs o fotos de tus facturas. Las procesamos automáticamente y las clasificamos por proveedor, fecha e importe.</p>
+      <div class="section-center">
+        <div class="label-chip">Funciones</div>
+        <h2 class="section-title">Todo lo que necesita tu negocio</h2>
+        <p class="section-body" style="max-width:540px;margin:0 auto">Diseñado específicamente para autónomos y pymes españolas que quieren llevar sus finanzas al día sin complicaciones.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feat-card feat-card--wide">
+          <div class="feat-card__content">
+            <div class="feat-icon feat-icon--teal">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11h14M11 4v14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Sube facturas arrastrando</h3>
+            <p>Drag & drop de PDF, imagen o foto. La IA lo procesa en segundos. Sin formularios, sin teclear nada.</p>
+          </div>
+          <div class="feat-card__visual feat-card__visual--drag">
+            <div class="drop-zone">
+              <div class="drop-zone__icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 4v18M8 12l8-8 8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 24v2a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2v-2" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+              </div>
+              <p>Arrastra tus facturas aquí</p>
+              <span>PDF, JPG, PNG · Hasta 20MB</span>
+            </div>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#FFF3E8">🧮</div>
-          <h3>IVA e IRPF automático</h3>
-          <p>Calcula tu IVA soportado y repercutido en tiempo real. Modelo 303 listo para presentar con un clic.</p>
+
+        <div class="feat-card">
+          <div class="feat-icon feat-icon--green">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 12L9 17L18 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Control de cobros y pagos</h3>
+          <p>Marca facturas como cobradas o pagadas. Alertas automáticas cuando se acerca el vencimiento.</p>
+          <div class="mini-pills">
+            <span class="mini-pill mini-pill--green">€ 2.400 cobrado</span>
+            <span class="mini-pill mini-pill--orange">€ 800 pendiente</span>
+            <span class="mini-pill mini-pill--red">€ 300 vencido</span>
+          </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#F0EEFF">📊</div>
-          <h3>Panel de control</h3>
-          <p>Visualiza tu situación fiscal de un vistazo: ingresos, gastos, IVA pendiente y próximas obligaciones.</p>
+
+        <div class="feat-card">
+          <div class="feat-icon feat-icon--blue">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 17L8 10l4 4 4-6 3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Ventas y gastos en tiempo real</h3>
+          <p>Dashboard actualizado al instante. Ve de un vistazo tu margen, el IVA acumulado y la evolución mensual.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#E8FDF9">✅</div>
-          <h3>Verifactu / SII</h3>
-          <p>Verifica tus facturas contra el registro de la AEAT. Cumplimiento automático con la normativa antifraude.</p>
+
+        <div class="feat-card">
+          <div class="feat-icon feat-icon--purple">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="2"/><path d="M11 7v4.5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Estado de tus facturas</h3>
+          <p>Pendiente, cobrada, vencida, con incidencia. Todo de un vistazo, con filtros y búsqueda instantánea.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#FFF3E8">📱</div>
-          <h3>Desde cualquier dispositivo</h3>
-          <p>Web, iOS y Android. Sube facturas desde el móvil en segundos con la cámara. Todo sincronizado.</p>
+
+        <div class="feat-card">
+          <div class="feat-icon feat-icon--orange">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 9h16" stroke="currentColor" stroke-width="2"/><path d="M7 2v4M15 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Declaraciones trimestrales</h3>
+          <p>Modelo 303, 130 y 111 preparados automáticamente con tus datos. Descarga o presenta directamente.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-card__icon" style="background:#F0EEFF">🔒</div>
-          <h3>Seguridad total</h3>
-          <p>Datos cifrados en la nube. Copias de seguridad automáticas. Cumplimiento RGPD desde el primer día.</p>
+
+        <div class="feat-card">
+          <div class="feat-icon feat-icon--teal">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="12" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="12" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>
+          </div>
+          <h3>Multi-dispositivo</h3>
+          <p>Accede desde el navegador en tu ordenador o desde el móvil. Todo sincronizado en la nube.</p>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- CÓMO FUNCIONA -->
-  <section class="how" id="como-funciona">
-    <div class="container">
-      <div class="section-label">Cómo funciona</div>
-      <h2 class="section-title">En tres pasos, al día con Hacienda</h2>
-      <div class="how__steps">
-        <div class="how__step">
-          <div class="how__num">01</div>
-          <h3>Crea tu cuenta</h3>
-          <p>Regístrate en menos de 2 minutos. Sin instalaciones, sin configuraciones complicadas.</p>
+  <!-- VERIFACTU -->
+  <section class="verifactu" id="verifactu">
+    <div class="container verifactu__inner">
+      <div class="verifactu__visual">
+        <div class="vf-card">
+          <div class="vf-card__header">
+            <div class="vf-logo">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L3 5.5v5C3 14.5 6 17.4 10 18c4-.6 7-3.5 7-7.5v-5L10 2Z" fill="rgba(0,212,184,0.15)" stroke="#00D4B8" stroke-width="1.4"/><path d="M6.5 10l2.5 2.5 4.5-4.5" stroke="#00D4B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Verificado en AEAT
+            </div>
+            <span class="vf-live">● En vivo</span>
+          </div>
+          <div class="vf-rows">
+            <div class="vf-row">
+              <span class="vf-row__label">NIF emisor</span>
+              <span class="vf-row__val">B12345678</span>
+            </div>
+            <div class="vf-row">
+              <span class="vf-row__label">Nº factura</span>
+              <span class="vf-row__val">F-2025-148</span>
+            </div>
+            <div class="vf-row">
+              <span class="vf-row__label">Fecha</span>
+              <span class="vf-row__val">15/05/2025</span>
+            </div>
+            <div class="vf-row">
+              <span class="vf-row__label">Importe total</span>
+              <span class="vf-row__val">€ 284,40</span>
+            </div>
+            <div class="vf-row">
+              <span class="vf-row__label">Hash AEAT</span>
+              <span class="vf-row__val vf-hash">a3f8…9c12</span>
+            </div>
+          </div>
+          <div class="vf-status">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#00D4B8" opacity=".2"/><path d="M4.5 8l2.5 2.5 4.5-4.5" stroke="#00D4B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Factura registrada y verificada por la AEAT
+          </div>
         </div>
-        <div class="how__arrow">→</div>
-        <div class="how__step">
-          <div class="how__num">02</div>
-          <h3>Sube tus facturas</h3>
-          <p>Arrastra tus PDFs o haz una foto. IncomingTax extrae los datos automáticamente.</p>
-        </div>
-        <div class="how__arrow">→</div>
-        <div class="how__step">
-          <div class="how__num">03</div>
-          <h3>Presenta y olvídate</h3>
-          <p>Tu 303 trimestral está listo. Descárgalo o envíalo directamente a la AEAT.</p>
-        </div>
+      </div>
+      <div class="verifactu__text">
+        <div class="label-chip label-chip--teal">Verifactu</div>
+        <h2 class="section-title">Cumple la ley antifraude<br>sin esfuerzo</h2>
+        <p class="section-body">Desde 2025, la normativa Verifactu exige que las facturas se registren en la AEAT. IncomingTax lo hace automáticamente por ti.</p>
+        <ul class="vf-list">
+          <li><span>✓</span> Verificación automática contra el registro AEAT</li>
+          <li><span>✓</span> Hash y huella digital de cada factura</li>
+          <li><span>✓</span> Alerta si una factura no supera la verificación</li>
+          <li><span>✓</span> Compatible con SII para grandes empresas</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -179,96 +460,132 @@
   <!-- PRECIOS -->
   <section class="pricing" id="precios">
     <div class="container">
-      <div class="section-label">Precios</div>
-      <h2 class="section-title">Simple y transparente</h2>
-      <p class="section-sub">Sin sorpresas. Sin comisiones ocultas. Cancela cuando quieras.</p>
-      <div class="pricing__grid">
-        <div class="pricing__card">
-          <div class="pricing__name">Starter</div>
-          <div class="pricing__price">Gratis</div>
-          <div class="pricing__period">para siempre</div>
-          <ul class="pricing__features">
-            <li>✓ Hasta 20 facturas/mes</li>
-            <li>✓ Modelo 303 básico</li>
-            <li>✓ Panel de control</li>
-            <li>✓ App móvil</li>
-            <li class="muted">✗ Verifactu / SII</li>
-            <li class="muted">✗ Exportaciones avanzadas</li>
+      <div class="section-center">
+        <div class="label-chip">Precios</div>
+        <h2 class="section-title">Sin sorpresas</h2>
+        <p class="section-body" style="max-width:460px;margin:0 auto">Paga solo por lo que usas. Cancela cuando quieras.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="price-card__top">
+            <div class="price-card__name">Starter</div>
+            <div class="price-card__price">Gratis</div>
+            <div class="price-card__sub">Para siempre</div>
+          </div>
+          <ul class="price-features">
+            <li class="ok">Hasta 20 facturas/mes</li>
+            <li class="ok">Panel de control</li>
+            <li class="ok">Modelo 303 básico</li>
+            <li class="ok">App web y móvil</li>
+            <li class="no">Verifactu / SII</li>
+            <li class="no">IA avanzada</li>
+            <li class="no">Exportación ZIP / Excel</li>
           </ul>
-          <a href="#contacto" class="btn btn--outline btn--full">Empezar gratis</a>
+          <a href="https://incomingtax.netlify.app" class="btn btn--outline btn--full">Empezar gratis</a>
         </div>
-        <div class="pricing__card pricing__card--featured">
-          <div class="pricing__badge">Más popular</div>
-          <div class="pricing__name">Pro</div>
-          <div class="pricing__price">€ 19<span>/mes</span></div>
-          <div class="pricing__period">IVA incluido</div>
-          <ul class="pricing__features">
-            <li>✓ Facturas ilimitadas</li>
-            <li>✓ Modelo 303, 130 y 111</li>
-            <li>✓ Verifactu / SII</li>
-            <li>✓ Exportación PDF y Excel</li>
-            <li>✓ Descarga masiva en ZIP</li>
-            <li>✓ Soporte prioritario</li>
+        <div class="price-card price-card--featured">
+          <div class="price-card__badge">Más popular</div>
+          <div class="price-card__top">
+            <div class="price-card__name">Pro</div>
+            <div class="price-card__price">€ 19<span>/mes</span></div>
+            <div class="price-card__sub">IVA incluido · 14 días gratis</div>
+          </div>
+          <ul class="price-features">
+            <li class="ok">Facturas ilimitadas</li>
+            <li class="ok">IA de extracción automática</li>
+            <li class="ok">Verifactu + SII integrado</li>
+            <li class="ok">Modelo 303, 130 y 111</li>
+            <li class="ok">Control de cobros y pagos</li>
+            <li class="ok">Exportación PDF / ZIP / Excel</li>
+            <li class="ok">Soporte prioritario</li>
           </ul>
-          <a href="#contacto" class="btn btn--primary btn--full">Empezar 14 días gratis</a>
+          <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--full">Empezar 14 días gratis</a>
         </div>
-        <div class="pricing__card">
-          <div class="pricing__name">Empresa</div>
-          <div class="pricing__price">A medida</div>
-          <div class="pricing__period">consulta sin compromiso</div>
-          <ul class="pricing__features">
-            <li>✓ Todo lo de Pro</li>
-            <li>✓ Multi-usuario</li>
-            <li>✓ API de integración</li>
-            <li>✓ Onboarding personalizado</li>
-            <li>✓ SLA garantizado</li>
-            <li>✓ Facturación anual</li>
+        <div class="price-card">
+          <div class="price-card__top">
+            <div class="price-card__name">Empresa</div>
+            <div class="price-card__price">A medida</div>
+            <div class="price-card__sub">Consulta sin compromiso</div>
+          </div>
+          <ul class="price-features">
+            <li class="ok">Todo lo de Pro</li>
+            <li class="ok">Multi-usuario y roles</li>
+            <li class="ok">API de integración</li>
+            <li class="ok">Onboarding personalizado</li>
+            <li class="ok">SLA garantizado</li>
+            <li class="ok">Gestor de cuenta dedicado</li>
+            <li class="ok">Facturación anual con descuento</li>
           </ul>
-          <a href="#contacto" class="btn btn--outline btn--full">Contactar</a>
+          <a href="mailto:hola@incomingtax.com" class="btn btn--outline btn--full">Hablar con ventas</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA STRIP -->
-  <section class="cta-strip">
-    <div class="container cta-strip__inner">
-      <div>
-        <h2>¿Listo para simplificar tu fiscalidad?</h2>
-        <p>Únete a los autónomos y pymes que ya confían en IncomingTax.</p>
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container faq__inner">
+      <div class="section-center">
+        <div class="label-chip">FAQ</div>
+        <h2 class="section-title">Preguntas frecuentes</h2>
       </div>
-      <a href="#contacto" class="btn btn--white btn--lg">Empezar ahora →</a>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>¿Necesito instalar algo?</summary>
+          <p>No. IncomingTax funciona directamente en tu navegador. También puedes acceder desde el móvil con la misma URL — funciona como una app nativa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Mis datos están seguros?</summary>
+          <p>Sí. Todos los datos se almacenan cifrados en servidores en Europa. Cumplimos el RGPD desde el primer día. Nunca vendemos ni compartimos tus datos.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué formatos de factura acepta la IA?</summary>
+          <p>PDF nativos, PDFs escaneados, JPG, PNG y fotos hechas con el móvil. Si la factura es legible, la IA la procesa.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Tengo que contratar a un gestor?</summary>
+          <p>IncomingTax no sustituye a un asesor fiscal para casos complejos, pero para la gran mayoría de autónomos y pymes pequeñas es suficiente para llevar las cuentas al día y presentar las declaraciones trimestrales.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Qué es Verifactu y por qué importa?</summary>
+          <p>Verifactu es el sistema de la AEAT que exige registrar cada factura emitida en tiempo real. Es obligatorio a partir de 2025 para muchas empresas. IncomingTax lo gestiona automáticamente para que no tengas que preocuparte.</p>
+        </details>
+        <details class="faq-item">
+          <summary>¿Puedo cancelar en cualquier momento?</summary>
+          <p>Sí, sin permanencia ni penalizaciones. Si cancelas, sigues teniendo acceso hasta el final del período pagado.</p>
+        </details>
+      </div>
     </div>
   </section>
 
-  <!-- CONTACTO -->
-  <section class="contact" id="contacto">
-    <div class="container contact__inner">
-      <div class="contact__info">
-        <div class="section-label">Contacto</div>
-        <h2 class="section-title" style="text-align:left">¿Tienes alguna pregunta?</h2>
-        <p>Escríbenos y te respondemos en menos de 24 horas. También puedes acceder directamente a la aplicación.</p>
-        <div class="contact__links">
-          <a href="mailto:hola@incomingtax.com" class="contact__link">✉️ hola@incomingtax.com</a>
-          <a href="https://app.incomingtax.com" class="contact__link">🚀 app.incomingtax.com</a>
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="final-cta__glow"></div>
+    <div class="container final-cta__inner">
+      <div class="final-cta__badge">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 3.6L14 6.5l-3 2.9.7 4.1L8 11.5l-3.7 1.9.7-4.1L2 6.5l4.2-.9L8 2Z" fill="#FFD700" stroke="#FFD700" stroke-width=".5" stroke-linejoin="round"/></svg>
+        Únete a cientos de autónomos y pymes
+      </div>
+      <h2 class="final-cta__title">Empieza hoy.<br>Es gratis.</h2>
+      <p class="final-cta__sub">Sin tarjeta de crédito. Sin instalaciones. Sin excusas.</p>
+      <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--xl">
+        Abrir IncomingTax gratis
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="final-cta__platforms">
+        <a href="https://incomingtax.netlify.app" class="platform-btn">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M6 9h6M9 6v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          Abrir en el navegador
+        </a>
+        <div class="platform-btn platform-btn--soon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="5" y="1" width="8" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="14" r="1" fill="currentColor"/></svg>
+          App Android · Próximamente
+        </div>
+        <div class="platform-btn platform-btn--soon">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M12 2.5a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 5 2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M3 7.5C2 9 2 11 2 12.5c0 2 1 3.5 7 3.5s7-1.5 7-3.5c0-1.5 0-3.5-1-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          App iOS · Próximamente
         </div>
       </div>
-      <form class="contact__form" id="contactForm">
-        <div class="form-group">
-          <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" placeholder="Tu nombre" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" placeholder="tu@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="mensaje">Mensaje</label>
-          <textarea id="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--full">Enviar mensaje →</button>
-        <div id="formMsg" class="form-msg"></div>
-      </form>
     </div>
   </section>
 
@@ -277,33 +594,44 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#" class="nav__logo">
-          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#00BFA6"/><path d="M8 20L14 8L20 20" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16.5H18" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
-          <span style="color:white">IncomingTax</span>
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <rect width="32" height="32" rx="10" fill="url(#lg2)"/>
+            <path d="M9 23L16 9L23 23" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.5 18.5H20.5" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
+            <defs><linearGradient id="lg2" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#00D4B8"/><stop offset="1" stop-color="#00A3FF"/></linearGradient></defs>
+          </svg>
+          <span style="color:#fff;font-size:16px;font-weight:700">IncomingTax</span>
         </a>
-        <p>Gestión fiscal inteligente para autónomos y pymes españolas.</p>
+        <p>Gestión fiscal inteligente para<br>autónomos y pymes en España.</p>
+        <p style="margin-top:12px;color:rgba(255,255,255,0.3);font-size:12px">hola@incomingtax.com</p>
       </div>
-      <div class="footer__cols">
+      <div class="footer__nav">
         <div class="footer__col">
-          <h4>Producto</h4>
+          <h5>Producto</h5>
           <a href="#funciones">Funciones</a>
+          <a href="#ia">Inteligencia artificial</a>
+          <a href="#verifactu">Verifactu</a>
           <a href="#precios">Precios</a>
-          <a href="https://app.incomingtax.com">Acceder</a>
         </div>
         <div class="footer__col">
-          <h4>Legal</h4>
-          <a href="/privacidad.html">Política de privacidad</a>
+          <h5>App</h5>
+          <a href="https://incomingtax.netlify.app">Acceder</a>
+          <a href="https://incomingtax.netlify.app">Registrarse</a>
+          <span class="footer__soon">Android (pronto)</span>
+          <span class="footer__soon">iOS (pronto)</span>
+        </div>
+        <div class="footer__col">
+          <h5>Legal</h5>
+          <a href="/privacidad.html">Privacidad</a>
           <a href="/terminos.html">Términos de uso</a>
           <a href="/cookies.html">Cookies</a>
-        </div>
-        <div class="footer__col">
-          <h4>Contacto</h4>
-          <a href="mailto:hola@incomingtax.com">hola@incomingtax.com</a>
         </div>
       </div>
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <p>© 2025 IncomingTax. Todos los derechos reservados.</p>
+        <span>© 2025 IncomingTax · Todos los derechos reservados</span>
+        <span>Hecho con ♥ en España</span>
       </div>
     </div>
   </footer>

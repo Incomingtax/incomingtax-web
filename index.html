@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IncomingTax · Gestión fiscal para autónomos y pymes</title>
+  <meta name="description" content="IncomingTax digitaliza la gestión de tus facturas, IVA e IRPF. Diseñado para autónomos y pequeñas empresas en España." />
+  <meta property="og:title" content="IncomingTax · Gestión fiscal inteligente" />
+  <meta property="og:description" content="Sube tus facturas, calcula tu IVA y prepara tus declaraciones trimestrales en minutos." />
+  <meta property="og:image" content="https://www.incomingtax.com/og-image.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#00BFA6"/><path d="M8 20L14 8L20 20" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16.5H18" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <span>IncomingTax</span>
+      </a>
+      <nav class="nav__links">
+        <a href="#funciones">Funciones</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="nav__cta">
+        <a href="https://app.incomingtax.com" class="btn btn--ghost">Acceder</a>
+        <a href="#precios" class="btn btn--primary">Empezar gratis</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="nav__mobile" id="mobileMenu">
+      <a href="#funciones">Funciones</a>
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+      <a href="https://app.incomingtax.com" class="btn btn--ghost">Acceder</a>
+      <a href="#precios" class="btn btn--primary">Empezar gratis</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__badge">🇪🇸 Adaptado a la normativa española</div>
+      <h1 class="hero__title">Olvídate del papeleo fiscal.<br><span class="gradient-text">Nosotros lo gestionamos.</span></h1>
+      <p class="hero__sub">Sube tus facturas, calcula tu IVA e IRPF y prepara tus declaraciones trimestrales en minutos. Sin hojas de cálculo, sin errores.</p>
+      <div class="hero__actions">
+        <a href="#precios" class="btn btn--primary btn--lg">Empezar gratis →</a>
+        <a href="#como-funciona" class="btn btn--ghost btn--lg">Ver cómo funciona</a>
+      </div>
+      <p class="hero__note">Sin tarjeta de crédito · Cancela cuando quieras</p>
+      <div class="hero__screen">
+        <div class="mockup">
+          <div class="mockup__bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__sidebar">
+              <div class="mock-item mock-item--active">📄 Facturas</div>
+              <div class="mock-item">📤 Subir</div>
+              <div class="mock-item">📊 Impuestos</div>
+              <div class="mock-item">⚙️ Ajustes</div>
+            </div>
+            <div class="mockup__content">
+              <div class="mock-header">Facturas recibidas</div>
+              <div class="mock-stats">
+                <div class="mock-stat">
+                  <div class="mock-stat__val">€ 12.450</div>
+                  <div class="mock-stat__lbl">Base imponible</div>
+                </div>
+                <div class="mock-stat">
+                  <div class="mock-stat__val teal">€ 2.614</div>
+                  <div class="mock-stat__lbl">IVA soportado</div>
+                </div>
+              </div>
+              <div class="mock-row"><span class="mock-dot teal"></span>Factura Amazon <span class="mock-amt">€ 48,40</span></div>
+              <div class="mock-row"><span class="mock-dot teal"></span>Hosting Digital Ocean <span class="mock-amt">€ 12,10</span></div>
+              <div class="mock-row"><span class="mock-dot orange"></span>Suministros oficina <span class="mock-amt">€ 230,00</span></div>
+              <div class="mock-row"><span class="mock-dot teal"></span>Software Canva Pro <span class="mock-amt">€ 14,99</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOGOS / TRUST -->
+  <section class="trust">
+    <div class="container">
+      <p class="trust__label">Cumplimos con la normativa de</p>
+      <div class="trust__logos">
+        <div class="trust__logo">AEAT</div>
+        <div class="trust__logo">TicketBAI</div>
+        <div class="trust__logo">Verifactu</div>
+        <div class="trust__logo">SII</div>
+        <div class="trust__logo">RGPD</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNCIONES -->
+  <section class="features" id="funciones">
+    <div class="container">
+      <div class="section-label">Funciones</div>
+      <h2 class="section-title">Todo lo que necesitas,<br>en un solo lugar</h2>
+      <p class="section-sub">Diseñado para autónomos y pymes que quieren llevar sus cuentas al día sin depender de gestorías costosas.</p>
+      <div class="features__grid">
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#E8FDF9">📄</div>
+          <h3>Facturas inteligentes</h3>
+          <p>Sube PDFs o fotos de tus facturas. Las procesamos automáticamente y las clasificamos por proveedor, fecha e importe.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#FFF3E8">🧮</div>
+          <h3>IVA e IRPF automático</h3>
+          <p>Calcula tu IVA soportado y repercutido en tiempo real. Modelo 303 listo para presentar con un clic.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#F0EEFF">📊</div>
+          <h3>Panel de control</h3>
+          <p>Visualiza tu situación fiscal de un vistazo: ingresos, gastos, IVA pendiente y próximas obligaciones.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#E8FDF9">✅</div>
+          <h3>Verifactu / SII</h3>
+          <p>Verifica tus facturas contra el registro de la AEAT. Cumplimiento automático con la normativa antifraude.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#FFF3E8">📱</div>
+          <h3>Desde cualquier dispositivo</h3>
+          <p>Web, iOS y Android. Sube facturas desde el móvil en segundos con la cámara. Todo sincronizado.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card__icon" style="background:#F0EEFF">🔒</div>
+          <h3>Seguridad total</h3>
+          <p>Datos cifrados en la nube. Copias de seguridad automáticas. Cumplimiento RGPD desde el primer día.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CÓMO FUNCIONA -->
+  <section class="how" id="como-funciona">
+    <div class="container">
+      <div class="section-label">Cómo funciona</div>
+      <h2 class="section-title">En tres pasos, al día con Hacienda</h2>
+      <div class="how__steps">
+        <div class="how__step">
+          <div class="how__num">01</div>
+          <h3>Crea tu cuenta</h3>
+          <p>Regístrate en menos de 2 minutos. Sin instalaciones, sin configuraciones complicadas.</p>
+        </div>
+        <div class="how__arrow">→</div>
+        <div class="how__step">
+          <div class="how__num">02</div>
+          <h3>Sube tus facturas</h3>
+          <p>Arrastra tus PDFs o haz una foto. IncomingTax extrae los datos automáticamente.</p>
+        </div>
+        <div class="how__arrow">→</div>
+        <div class="how__step">
+          <div class="how__num">03</div>
+          <h3>Presenta y olvídate</h3>
+          <p>Tu 303 trimestral está listo. Descárgalo o envíalo directamente a la AEAT.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section class="pricing" id="precios">
+    <div class="container">
+      <div class="section-label">Precios</div>
+      <h2 class="section-title">Simple y transparente</h2>
+      <p class="section-sub">Sin sorpresas. Sin comisiones ocultas. Cancela cuando quieras.</p>
+      <div class="pricing__grid">
+        <div class="pricing__card">
+          <div class="pricing__name">Starter</div>
+          <div class="pricing__price">Gratis</div>
+          <div class="pricing__period">para siempre</div>
+          <ul class="pricing__features">
+            <li>✓ Hasta 20 facturas/mes</li>
+            <li>✓ Modelo 303 básico</li>
+            <li>✓ Panel de control</li>
+            <li>✓ App móvil</li>
+            <li class="muted">✗ Verifactu / SII</li>
+            <li class="muted">✗ Exportaciones avanzadas</li>
+          </ul>
+          <a href="#contacto" class="btn btn--outline btn--full">Empezar gratis</a>
+        </div>
+        <div class="pricing__card pricing__card--featured">
+          <div class="pricing__badge">Más popular</div>
+          <div class="pricing__name">Pro</div>
+          <div class="pricing__price">€ 19<span>/mes</span></div>
+          <div class="pricing__period">IVA incluido</div>
+          <ul class="pricing__features">
+            <li>✓ Facturas ilimitadas</li>
+            <li>✓ Modelo 303, 130 y 111</li>
+            <li>✓ Verifactu / SII</li>
+            <li>✓ Exportación PDF y Excel</li>
+            <li>✓ Descarga masiva en ZIP</li>
+            <li>✓ Soporte prioritario</li>
+          </ul>
+          <a href="#contacto" class="btn btn--primary btn--full">Empezar 14 días gratis</a>
+        </div>
+        <div class="pricing__card">
+          <div class="pricing__name">Empresa</div>
+          <div class="pricing__price">A medida</div>
+          <div class="pricing__period">consulta sin compromiso</div>
+          <ul class="pricing__features">
+            <li>✓ Todo lo de Pro</li>
+            <li>✓ Multi-usuario</li>
+            <li>✓ API de integración</li>
+            <li>✓ Onboarding personalizado</li>
+            <li>✓ SLA garantizado</li>
+            <li>✓ Facturación anual</li>
+          </ul>
+          <a href="#contacto" class="btn btn--outline btn--full">Contactar</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container cta-strip__inner">
+      <div>
+        <h2>¿Listo para simplificar tu fiscalidad?</h2>
+        <p>Únete a los autónomos y pymes que ya confían en IncomingTax.</p>
+      </div>
+      <a href="#contacto" class="btn btn--white btn--lg">Empezar ahora →</a>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
+    <div class="container contact__inner">
+      <div class="contact__info">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title" style="text-align:left">¿Tienes alguna pregunta?</h2>
+        <p>Escríbenos y te respondemos en menos de 24 horas. También puedes acceder directamente a la aplicación.</p>
+        <div class="contact__links">
+          <a href="mailto:hola@incomingtax.com" class="contact__link">✉️ hola@incomingtax.com</a>
+          <a href="https://app.incomingtax.com" class="contact__link">🚀 app.incomingtax.com</a>
+        </div>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Enviar mensaje →</button>
+        <div id="formMsg" class="form-msg"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="nav__logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="#00BFA6"/><path d="M8 20L14 8L20 20" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 16.5H18" stroke="white" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span style="color:white">IncomingTax</span>
+        </a>
+        <p>Gestión fiscal inteligente para autónomos y pymes españolas.</p>
+      </div>
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Producto</h4>
+          <a href="#funciones">Funciones</a>
+          <a href="#precios">Precios</a>
+          <a href="https://app.incomingtax.com">Acceder</a>
+        </div>
+        <div class="footer__col">
+          <h4>Legal</h4>
+          <a href="/privacidad.html">Política de privacidad</a>
+          <a href="/terminos.html">Términos de uso</a>
+          <a href="/cookies.html">Cookies</a>
+        </div>
+        <div class="footer__col">
+          <h4>Contacto</h4>
+          <a href="mailto:hola@incomingtax.com">hola@incomingtax.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2025 IncomingTax. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

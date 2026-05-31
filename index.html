@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IncomingTax · Gestión fiscal con IA para autónomos y pymes</title>
-  <meta name="description" content="IncomingTax digitaliza y automatiza tu gestión fiscal con inteligencia artificial. Sube facturas arrastrando, controla cobros, gastos y ventas en tiempo real. Verifactu integrado." />
-  <meta property="og:title" content="IncomingTax · El copiloto fiscal de tu empresa" />
-  <meta property="og:description" content="IA que lee tus facturas, Verifactu integrado, panel de cobros y pagos en tiempo real. Pruébalo gratis." />
+  <title>Incoming Tax · Tu gestoría fiscal con inteligencia artificial</title>
+  <meta name="description" content="Incoming Tax es tu gestoría fiscal con inteligencia artificial. Arrastra tus facturas y la IA las lee, clasifica y contabiliza. Control de cobros, pagos, ventas y gastos en tiempo real. Verifactu integrado." />
+  <meta property="og:title" content="Incoming Tax · Tu gestoría fiscal con IA" />
+  <meta property="og:description" content="La IA lee tus facturas, Verifactu integrado, panel de cobros y pagos en tiempo real." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
 
@@ -18,13 +18,8 @@
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <svg class="nav__logo-icon" width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect width="32" height="32" rx="10" fill="url(#lg)"/>
-          <path d="M9 23L16 9L23 23" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M11.5 18.5H20.5" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-          <defs><linearGradient id="lg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#00D4B8"/><stop offset="1" stop-color="#00A3FF"/></linearGradient></defs>
-        </svg>
-        <span>IncomingTax</span>
+        <img src="logo.png" alt="Incoming Tax" class="nav__logo-img" />
+        <span>Incoming Tax</span>
       </a>
       <nav class="nav__links">
         <a href="#funciones">Funciones</a>
@@ -34,7 +29,7 @@
       </nav>
       <div class="nav__actions">
         <a href="https://incomingtax.netlify.app" class="btn btn--ghost btn--sm">Iniciar sesión</a>
-        <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--sm">Probar gratis →</a>
+        <a href="#precios" class="btn btn--primary btn--sm">Solicitar acceso →</a>
       </div>
       <button class="burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
@@ -46,7 +41,7 @@
       <a href="#verifactu">Verifactu</a>
       <a href="#precios">Precios</a>
       <a href="https://incomingtax.netlify.app" class="btn btn--ghost">Iniciar sesión</a>
-      <a href="https://incomingtax.netlify.app" class="btn btn--primary">Probar gratis →</a>
+      <a href="#precios" class="btn btn--primary">Solicitar acceso →</a>
     </div>
   </header>
 
@@ -62,15 +57,15 @@
         <span class="pill__arrow">→</span>
       </a>
       <h1 class="hero__title">
-        Tu gestoría fiscal<br>
+        Incoming Tax, tu gestoría fiscal<br>
         <span class="hero__title-gradient">con inteligencia artificial</span>
       </h1>
       <p class="hero__sub">
-        Arrastra tus facturas y nuestra IA las lee, clasifica y contabiliza sola. Control total de cobros, pagos, IVA e IRPF — en tiempo real, desde cualquier dispositivo.
+        Arrastra tus facturas y nuestra IA las lee, clasifica y contabiliza sola. Control total de cobros, pagos, ventas y gastos — en tiempo real, desde cualquier dispositivo.
       </p>
       <div class="hero__cta">
-        <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--xl">
-          Empezar gratis
+        <a href="#precios" class="btn btn--primary btn--xl">
+          Solicitar acceso
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
         <a href="#demo" class="btn btn--ghost btn--xl">
@@ -78,9 +73,9 @@
           Ver demo
         </a>
       </div>
-      <p class="hero__disclaimer">Sin tarjeta de crédito · Cancela cuando quieras · 14 días gratis</p>
+      <p class="hero__disclaimer">Cumplimiento Verifactu · Soporte en español · Cancela cuando quieras</p>
 
-      <!-- DASHBOARD MOCKUP -->
+      <!-- DASHBOARD MOCKUP (demo animado) -->
       <div class="dashboard" id="demo">
         <div class="dashboard__chrome">
           <div class="chrome__dots">
@@ -151,7 +146,7 @@
               </div>
             </div>
             <!-- Recent invoices -->
-            <div class="invoice-table">
+            <div class="invoice-table" id="invoiceTable">
               <div class="invoice-table__head">
                 <span>Factura</span>
                 <span>Proveedor</span>
@@ -185,20 +180,15 @@
                 <span class="inv-amount">€ 145,20</span>
                 <span class="inv-badge inv-badge--pending">⏳ Pendiente</span>
               </div>
-              <div class="invoice-row">
-                <span class="inv-num">F-2025-145</span>
-                <span class="inv-provider">
-                  <span class="inv-avatar" style="background:#8B5CF6">C</span>
-                  Canva Pro
-                </span>
-                <span class="inv-amount">€ 14,99</span>
-                <span class="inv-badge inv-badge--ok">✓ Verifactu</span>
-              </div>
             </div>
           </main>
         </div>
+        <!-- Animación de factura cayendo -->
+        <div class="flying-invoice" id="flyingInvoice">
+          <svg width="34" height="44" viewBox="0 0 34 44" fill="none"><rect width="34" height="44" rx="4" fill="#fff"/><path d="M7 11h20M7 16h20M7 21h12" stroke="#C9D4E5" stroke-width="2" stroke-linecap="round"/><rect x="5" y="27" width="24" height="10" rx="2" fill="#E8FBF8"/><text x="17" y="34" text-anchor="middle" fill="#00B89E" font-size="6" font-weight="bold" font-family="Inter">FACTURA</text></svg>
+        </div>
         <!-- Drop overlay hint -->
-        <div class="drag-hint">
+        <div class="drag-hint" id="dragHint">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v10M6 7l4-4 4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 14v1.5A1.5 1.5 0 0 0 4.5 17h11A1.5 1.5 0 0 0 17 15.5V14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
           Arrastra tus facturas aquí
         </div>
@@ -217,19 +207,19 @@
         </div>
         <div class="compliance-badge">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          SII compatible
-        </div>
-        <div class="compliance-badge">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           RGPD
         </div>
         <div class="compliance-badge">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Mod. 303 · 130 · 111
+          Modelo 303
         </div>
         <div class="compliance-badge">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          TicketBAI
+          Modelo 130
+        </div>
+        <div class="compliance-badge">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L2 3.5v4C2 10.5 4.2 12.8 7 13c2.8-.2 5-2.5 5-5.5v-4L7 1Z" fill="#00D4B8" opacity=".2" stroke="#00D4B8" stroke-width="1.2"/><path d="M4.5 7l2 2 3-3" stroke="#00D4B8" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Modelo 111
         </div>
       </div>
     </div>
@@ -446,12 +436,12 @@
       <div class="verifactu__text">
         <div class="label-chip label-chip--teal">Verifactu</div>
         <h2 class="section-title">Cumple la ley antifraude<br>sin esfuerzo</h2>
-        <p class="section-body">Desde 2025, la normativa Verifactu exige que las facturas se registren en la AEAT. IncomingTax lo hace automáticamente por ti.</p>
+        <p class="section-body">Desde 2025, la normativa Verifactu exige que las facturas se registren en la AEAT. Incoming Tax lo hace automáticamente por ti.</p>
         <ul class="vf-list">
           <li><span>✓</span> Verificación automática contra el registro AEAT</li>
           <li><span>✓</span> Hash y huella digital de cada factura</li>
           <li><span>✓</span> Alerta si una factura no supera la verificación</li>
-          <li><span>✓</span> Compatible con SII para grandes empresas</li>
+          <li><span>✓</span> Registro y trazabilidad completa de cada operación</li>
         </ul>
       </div>
     </div>
@@ -462,61 +452,36 @@
     <div class="container">
       <div class="section-center">
         <div class="label-chip">Precios</div>
-        <h2 class="section-title">Sin sorpresas</h2>
-        <p class="section-body" style="max-width:460px;margin:0 auto">Paga solo por lo que usas. Cancela cuando quieras.</p>
+        <h2 class="section-title">Un único plan, todo incluido</h2>
+        <p class="section-body" style="max-width:480px;margin:0 auto">Sin niveles confusos ni funciones bloqueadas. Todo lo que necesitas, por un precio claro.</p>
       </div>
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="price-card__top">
-            <div class="price-card__name">Starter</div>
-            <div class="price-card__price">Gratis</div>
-            <div class="price-card__sub">Para siempre</div>
+      <div class="pricing-single">
+        <div class="price-card price-card--featured price-card--single">
+          <div class="price-card__badge">Plan Incoming Tax</div>
+          <div class="price-single__layout">
+            <div class="price-single__left">
+              <div class="price-card__name">Profesional</div>
+              <div class="price-card__price">€ 45<span>/mes</span></div>
+              <div class="price-card__sub">+ IVA · Facturación mensual · Sin permanencia</div>
+              <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--full" style="margin-top:24px">Solicitar acceso →</a>
+              <a href="mailto:hola@incomingtax.com" class="btn btn--outline btn--full" style="margin-top:10px">Hablar con ventas</a>
+            </div>
+            <div class="price-single__right">
+              <div class="price-single__title">Incluye:</div>
+              <ul class="price-features price-features--grid">
+                <li class="ok">Facturas ilimitadas</li>
+                <li class="ok">IA de extracción automática</li>
+                <li class="ok">Verifactu integrado</li>
+                <li class="ok">Control de cobros y pagos</li>
+                <li class="ok">Ventas y gastos en tiempo real</li>
+                <li class="ok">Estado de cada factura</li>
+                <li class="ok">Modelo 303, 130 y 111</li>
+                <li class="ok">Exportación PDF, ZIP y Excel</li>
+                <li class="ok">Acceso web y móvil</li>
+                <li class="ok">Soporte en español</li>
+              </ul>
+            </div>
           </div>
-          <ul class="price-features">
-            <li class="ok">Hasta 20 facturas/mes</li>
-            <li class="ok">Panel de control</li>
-            <li class="ok">Modelo 303 básico</li>
-            <li class="ok">App web y móvil</li>
-            <li class="no">Verifactu / SII</li>
-            <li class="no">IA avanzada</li>
-            <li class="no">Exportación ZIP / Excel</li>
-          </ul>
-          <a href="https://incomingtax.netlify.app" class="btn btn--outline btn--full">Empezar gratis</a>
-        </div>
-        <div class="price-card price-card--featured">
-          <div class="price-card__badge">Más popular</div>
-          <div class="price-card__top">
-            <div class="price-card__name">Pro</div>
-            <div class="price-card__price">€ 19<span>/mes</span></div>
-            <div class="price-card__sub">IVA incluido · 14 días gratis</div>
-          </div>
-          <ul class="price-features">
-            <li class="ok">Facturas ilimitadas</li>
-            <li class="ok">IA de extracción automática</li>
-            <li class="ok">Verifactu + SII integrado</li>
-            <li class="ok">Modelo 303, 130 y 111</li>
-            <li class="ok">Control de cobros y pagos</li>
-            <li class="ok">Exportación PDF / ZIP / Excel</li>
-            <li class="ok">Soporte prioritario</li>
-          </ul>
-          <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--full">Empezar 14 días gratis</a>
-        </div>
-        <div class="price-card">
-          <div class="price-card__top">
-            <div class="price-card__name">Empresa</div>
-            <div class="price-card__price">A medida</div>
-            <div class="price-card__sub">Consulta sin compromiso</div>
-          </div>
-          <ul class="price-features">
-            <li class="ok">Todo lo de Pro</li>
-            <li class="ok">Multi-usuario y roles</li>
-            <li class="ok">API de integración</li>
-            <li class="ok">Onboarding personalizado</li>
-            <li class="ok">SLA garantizado</li>
-            <li class="ok">Gestor de cuenta dedicado</li>
-            <li class="ok">Facturación anual con descuento</li>
-          </ul>
-          <a href="mailto:hola@incomingtax.com" class="btn btn--outline btn--full">Hablar con ventas</a>
         </div>
       </div>
     </div>
@@ -532,7 +497,7 @@
       <div class="faq-list">
         <details class="faq-item">
           <summary>¿Necesito instalar algo?</summary>
-          <p>No. IncomingTax funciona directamente en tu navegador. También puedes acceder desde el móvil con la misma URL — funciona como una app nativa.</p>
+          <p>No. Incoming Tax funciona directamente en tu navegador. También puedes acceder desde el móvil con la misma URL — funciona como una app nativa.</p>
         </details>
         <details class="faq-item">
           <summary>¿Mis datos están seguros?</summary>
@@ -544,15 +509,15 @@
         </details>
         <details class="faq-item">
           <summary>¿Tengo que contratar a un gestor?</summary>
-          <p>IncomingTax no sustituye a un asesor fiscal para casos complejos, pero para la gran mayoría de autónomos y pymes pequeñas es suficiente para llevar las cuentas al día y presentar las declaraciones trimestrales.</p>
+          <p>Incoming Tax no sustituye a un asesor fiscal para casos complejos, pero para la gran mayoría de autónomos y pymes pequeñas es suficiente para llevar las cuentas al día y presentar las declaraciones trimestrales.</p>
         </details>
         <details class="faq-item">
           <summary>¿Qué es Verifactu y por qué importa?</summary>
-          <p>Verifactu es el sistema de la AEAT que exige registrar cada factura emitida en tiempo real. Es obligatorio a partir de 2025 para muchas empresas. IncomingTax lo gestiona automáticamente para que no tengas que preocuparte.</p>
+          <p>Verifactu es el sistema de la AEAT que exige registrar cada factura emitida en tiempo real. Es obligatorio a partir de 2025 para muchas empresas. Incoming Tax lo gestiona automáticamente para que no tengas que preocuparte.</p>
         </details>
         <details class="faq-item">
-          <summary>¿Puedo cancelar en cualquier momento?</summary>
-          <p>Sí, sin permanencia ni penalizaciones. Si cancelas, sigues teniendo acceso hasta el final del período pagado.</p>
+          <summary>¿Cuánto cuesta y hay permanencia?</summary>
+          <p>El plan Profesional cuesta 45 € al mes + IVA, con todas las funciones incluidas. Sin permanencia: puedes cancelar cuando quieras y mantienes el acceso hasta el final del período pagado.</p>
         </details>
       </div>
     </div>
@@ -564,12 +529,12 @@
     <div class="container final-cta__inner">
       <div class="final-cta__badge">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 2l1.8 3.6L14 6.5l-3 2.9.7 4.1L8 11.5l-3.7 1.9.7-4.1L2 6.5l4.2-.9L8 2Z" fill="#FFD700" stroke="#FFD700" stroke-width=".5" stroke-linejoin="round"/></svg>
-        Únete a cientos de autónomos y pymes
+        Para autónomos y pymes que quieren ir al día
       </div>
-      <h2 class="final-cta__title">Empieza hoy.<br>Es gratis.</h2>
-      <p class="final-cta__sub">Sin tarjeta de crédito. Sin instalaciones. Sin excusas.</p>
-      <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--xl">
-        Abrir IncomingTax gratis
+      <h2 class="final-cta__title">Tu fiscalidad,<br>al fin sencilla.</h2>
+      <p class="final-cta__sub">Deja que la IA haga el trabajo. Tú solo arrastra las facturas.</p>
+      <a href="#precios" class="btn btn--primary btn--xl">
+        Solicitar acceso
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <div class="final-cta__platforms">
@@ -594,15 +559,10 @@
     <div class="container footer__inner">
       <div class="footer__brand">
         <a href="#" class="nav__logo">
-          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
-            <rect width="32" height="32" rx="10" fill="url(#lg2)"/>
-            <path d="M9 23L16 9L23 23" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M11.5 18.5H20.5" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-            <defs><linearGradient id="lg2" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#00D4B8"/><stop offset="1" stop-color="#00A3FF"/></linearGradient></defs>
-          </svg>
-          <span style="color:#fff;font-size:16px;font-weight:700">IncomingTax</span>
+          <img src="logo.png" alt="Incoming Tax" class="nav__logo-img" />
+          <span style="color:#fff;font-size:16px;font-weight:700">Incoming Tax</span>
         </a>
-        <p>Gestión fiscal inteligente para<br>autónomos y pymes en España.</p>
+        <p>Tu gestoría fiscal con inteligencia artificial<br>para autónomos y pymes en España.</p>
         <p style="margin-top:12px;color:rgba(255,255,255,0.3);font-size:12px">hola@incomingtax.com</p>
       </div>
       <div class="footer__nav">
@@ -616,7 +576,6 @@
         <div class="footer__col">
           <h5>App</h5>
           <a href="https://incomingtax.netlify.app">Acceder</a>
-          <a href="https://incomingtax.netlify.app">Registrarse</a>
           <span class="footer__soon">Android (pronto)</span>
           <span class="footer__soon">iOS (pronto)</span>
         </div>
@@ -630,7 +589,7 @@
     </div>
     <div class="footer__bottom">
       <div class="container">
-        <span>© 2025 IncomingTax · Todos los derechos reservados</span>
+        <span>© 2025 Incoming Tax · Todos los derechos reservados</span>
         <span>Hecho con ♥ en España</span>
       </div>
     </div>

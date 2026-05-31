@@ -70,6 +70,68 @@ if (typingEl) {
   }, 80);
 }
 
+/* ---- Demo: factura cayendo al dashboard ---- */
+const flyingInvoice = document.getElementById('flyingInvoice');
+const dashboard = document.getElementById('demo');
+const invoiceTable = document.getElementById('invoiceTable');
+const verDemoBtn = document.querySelector('a[href="#demo"]');
+let demoRunning = false;
+
+function playInvoiceDemo() {
+  if (demoRunning || !flyingInvoice || !dashboard) return;
+  demoRunning = true;
+
+  // Reinicia la animación de la factura
+  flyingInvoice.classList.remove('is-flying');
+  void flyingInvoice.offsetWidth; // fuerza reflow
+  flyingInvoice.classList.add('is-flying');
+
+  // A mitad de la caída: pulso del dashboard + nueva fila procesada
+  setTimeout(() => {
+    dashboard.classList.add('is-processing');
+    setTimeout(() => dashboard.classList.remove('is-processing'), 600);
+
+    if (invoiceTable) {
+      const row = document.createElement('div');
+      row.className = 'invoice-row is-new';
+      row.innerHTML =
+        '<span class="inv-num">F-2025-149</span>' +
+        '<span class="inv-provider"><span class="inv-avatar" style="background:#8B5CF6">N</span>Notion Labs</span>' +
+        '<span class="inv-amount">€ 96,80</span>' +
+        '<span class="inv-badge inv-badge--ok">✓ Verifactu</span>';
+      invoiceTable.appendChild(row);
+      // Mantén solo las últimas filas para no acumular en re-ejecuciones
+      const rows = invoiceTable.querySelectorAll('.invoice-row');
+      if (rows.length > 4) rows[0].remove();
+    }
+  }, 1050);
+
+  setTimeout(() => {
+    flyingInvoice.classList.remove('is-flying');
+    demoRunning = false;
+  }, 1700);
+}
+
+if (verDemoBtn) {
+  verDemoBtn.addEventListener('click', () => {
+    // deja que el smooth-scroll lleve al dashboard y luego anima
+    setTimeout(playInvoiceDemo, 650);
+  });
+}
+
+// Auto-reproduce una vez cuando el dashboard entra en pantalla
+if (dashboard) {
+  const demoObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        setTimeout(playInvoiceDemo, 600);
+        demoObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  demoObs.observe(dashboard);
+}
+
 /* ---- FAQ keyboard a11y ---- */
 document.querySelectorAll('.faq-item summary').forEach(s => {
   s.addEventListener('keydown', e => {

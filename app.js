@@ -132,6 +132,50 @@ if (dashboard) {
   demoObs.observe(dashboard);
 }
 
+/* ---- Vídeo demo: placeholder hasta que exista demo.mp4 ---- */
+const appVideo = document.getElementById('appVideo');
+const videoPlaceholder = document.getElementById('videoPlaceholder');
+if (appVideo && videoPlaceholder) {
+  const showVideo = () => { videoPlaceholder.style.display = 'none'; };
+  appVideo.addEventListener('loadeddata', showVideo);
+  appVideo.addEventListener('canplay', showVideo);
+  // Si no hay archivo de vídeo, mantenemos el placeholder y ocultamos los controles
+  const onMissing = () => { appVideo.removeAttribute('controls'); appVideo.style.display = 'none'; };
+  appVideo.addEventListener('error', onMissing);
+  const src = appVideo.querySelector('source');
+  if (src) src.addEventListener('error', onMissing);
+}
+
+/* ---- Formulario de solicitar acceso (Formspree AJAX) ---- */
+const accessForm = document.getElementById('accessForm');
+const formMsg = document.getElementById('formMsg');
+if (accessForm && formMsg) {
+  accessForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    formMsg.className = 'access-form__msg';
+    if (accessForm.action.includes('TU_ID_FORMSPREE')) {
+      formMsg.textContent = 'El formulario aún no está conectado. Falta pegar el ID de Formspree.';
+      formMsg.classList.add('err');
+      return;
+    }
+    formMsg.textContent = 'Enviando…';
+    try {
+      const res = await fetch(accessForm.action, {
+        method: 'POST',
+        body: new FormData(accessForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('bad response');
+      accessForm.reset();
+      formMsg.textContent = '¡Gracias! Hemos recibido tu solicitud. Te contactaremos muy pronto.';
+      formMsg.classList.add('ok');
+    } catch (err) {
+      formMsg.textContent = 'No se pudo enviar. Escríbenos a dmorenog@incomingtax.com';
+      formMsg.classList.add('err');
+    }
+  });
+}
+
 /* ---- FAQ keyboard a11y ---- */
 document.querySelectorAll('.faq-item summary').forEach(s => {
   s.addEventListener('keydown', e => {

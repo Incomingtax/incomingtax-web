@@ -22,6 +22,7 @@
         <span>Incoming Tax</span>
       </a>
       <nav class="nav__links">
+        <a href="#fiscalistas">Fiscalistas</a>
         <a href="#funciones">Funciones</a>
         <a href="#ia">Inteligencia artificial</a>
         <a href="#verifactu">Verifactu</a>
@@ -29,19 +30,20 @@
       </nav>
       <div class="nav__actions">
         <a href="https://incomingtax.netlify.app" class="btn btn--ghost btn--sm">Iniciar sesión</a>
-        <a href="#precios" class="btn btn--primary btn--sm">Solicitar acceso →</a>
+        <a href="#solicitar" class="btn btn--primary btn--sm">Solicitar acceso →</a>
       </div>
       <button class="burger" id="burger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="mobileMenu">
+      <a href="#fiscalistas">Fiscalistas</a>
       <a href="#funciones">Funciones</a>
       <a href="#ia">Inteligencia artificial</a>
       <a href="#verifactu">Verifactu</a>
       <a href="#precios">Precios</a>
       <a href="https://incomingtax.netlify.app" class="btn btn--ghost">Iniciar sesión</a>
-      <a href="#precios" class="btn btn--primary">Solicitar acceso →</a>
+      <a href="#solicitar" class="btn btn--primary">Solicitar acceso →</a>
     </div>
   </header>
 
@@ -61,19 +63,19 @@
         <span class="hero__title-gradient">con inteligencia artificial</span>
       </h1>
       <p class="hero__sub">
-        Arrastra tus facturas y nuestra IA las lee, clasifica y contabiliza sola. Control total de cobros, pagos, ventas y gastos — en tiempo real, desde cualquier dispositivo.
+        Arrastra tus facturas y nuestra IA las lee y contabiliza. Y detrás, un equipo de fiscalistas que revisa tus datos y presenta tus declaraciones por ti. Olvídate de mandarle nada a tu gestor.
       </p>
       <div class="hero__cta">
-        <a href="#precios" class="btn btn--primary btn--xl">
+        <a href="#solicitar" class="btn btn--primary btn--xl">
           Solicitar acceso
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#demo" class="btn btn--ghost btn--xl">
+        <a href="#video" class="btn btn--ghost btn--xl">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.5"/><path d="M7 6.5L12 9L7 11.5V6.5Z" fill="currentColor"/></svg>
           Ver demo
         </a>
       </div>
-      <p class="hero__disclaimer">Cumplimiento Verifactu · Soporte en español · Cancela cuando quieras</p>
+      <p class="hero__disclaimer">Equipo de fiscalistas + IA · Cumplimiento Verifactu · Soporte en español</p>
 
       <!-- DASHBOARD MOCKUP (demo animado) -->
       <div class="dashboard" id="demo">
@@ -225,6 +227,36 @@
     </div>
   </div>
 
+  <!-- VIDEO DEMO -->
+  <section class="video-demo" id="video">
+    <div class="container">
+      <div class="section-center">
+        <div class="label-chip">En acción</div>
+        <h2 class="section-title">Mira Incoming Tax en funcionamiento</h2>
+        <p class="section-body" style="max-width:560px;margin:0 auto">Sube una factura arrastrándola y observa cómo la IA la lee y la contabiliza en segundos.</p>
+      </div>
+      <div class="video-frame">
+        <div class="video-frame__chrome">
+          <span></span><span></span><span></span>
+          <div class="video-frame__url">app.incomingtax.com</div>
+        </div>
+        <div class="video-player" id="videoPlayer">
+          <video id="appVideo" controls preload="metadata" playsinline poster="logo.png">
+            <source src="demo.mp4" type="video/mp4" />
+          </video>
+          <!-- Placeholder si aún no hay vídeo -->
+          <div class="video-placeholder" id="videoPlaceholder">
+            <div class="video-placeholder__play">
+              <svg width="26" height="26" viewBox="0 0 26 26" fill="none"><path d="M9 7.5L19 13L9 18.5V7.5Z" fill="currentColor"/></svg>
+            </div>
+            <div class="video-placeholder__text">Vídeo demostración</div>
+            <div class="video-placeholder__sub">Próximamente · grabación real de la app</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- AI SECTION -->
   <section class="ai-section" id="ia">
     <div class="container ai-section__inner">
@@ -309,6 +341,59 @@
           </div>
           <div class="ai-card__footer">
             <button class="ai-confirm-btn">Confirmar y guardar →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FISCALISTAS -->
+  <section class="experts" id="fiscalistas">
+    <div class="container experts__inner">
+      <div class="experts__text">
+        <div class="label-chip label-chip--teal">Equipo humano</div>
+        <h2 class="section-title">Olvídate de mandar<br>las facturas a tu gestor</h2>
+        <p class="section-body">Incoming Tax no es solo una app. Está formado por un equipo de <strong>fiscalistas especializados</strong> que revisan tus datos, comprueban que todo cuadra y presentan tus declaraciones por ti. Tú subes las facturas; nosotros nos encargamos del resto.</p>
+        <ul class="experts__list">
+          <li>
+            <div class="experts__icon">👥</div>
+            <div>
+              <strong>Fiscalistas de verdad detrás de cada cuenta</strong>
+              <span>Profesionales colegiados que conocen la normativa española al detalle.</span>
+            </div>
+          </li>
+          <li>
+            <div class="experts__icon">🔍</div>
+            <div>
+              <strong>Revisión de tus datos antes de presentar</strong>
+              <span>La IA hace el trabajo pesado; un fiscalista valida que todo esté correcto.</span>
+            </div>
+          </li>
+          <li>
+            <div class="experts__icon">📑</div>
+            <div>
+              <strong>Tus declaraciones, presentadas por nosotros</strong>
+              <span>Modelo 303, 130 y 111 preparados y presentados ante la AEAT.</span>
+            </div>
+          </li>
+        </ul>
+        <a href="#solicitar" class="btn btn--primary" style="margin-top:8px">Quiero que se encarguen ellos →</a>
+      </div>
+      <div class="experts__visual">
+        <div class="experts__card">
+          <div class="experts__card-head">
+            <span class="experts__avatar" style="background:#00D4B8">DM</span>
+            <div>
+              <div class="experts__name">Tu fiscalista asignado</div>
+              <div class="experts__role">Revisando tu trimestre · Modelo 303</div>
+            </div>
+            <span class="experts__live">● Activo</span>
+          </div>
+          <div class="experts__steps">
+            <div class="experts__step done"><span>✓</span> Facturas recibidas y leídas por la IA</div>
+            <div class="experts__step done"><span>✓</span> Datos revisados por un fiscalista</div>
+            <div class="experts__step doing"><span></span> Preparando Modelo 303 del trimestre</div>
+            <div class="experts__step"><span></span> Presentación ante la AEAT</div>
           </div>
         </div>
       </div>
@@ -463,8 +548,8 @@
               <div class="price-card__name">Profesional</div>
               <div class="price-card__price">€ 45<span>/mes</span></div>
               <div class="price-card__sub">+ IVA · Facturación mensual · Sin permanencia</div>
-              <a href="https://incomingtax.netlify.app" class="btn btn--primary btn--full" style="margin-top:24px">Solicitar acceso →</a>
-              <a href="mailto:hola@incomingtax.com" class="btn btn--outline btn--full" style="margin-top:10px">Hablar con ventas</a>
+              <a href="#solicitar" class="btn btn--primary btn--full" style="margin-top:24px">Solicitar acceso →</a>
+              <a href="mailto:dmorenog@incomingtax.com" class="btn btn--outline btn--full" style="margin-top:10px">Hablar con ventas</a>
             </div>
             <div class="price-single__right">
               <div class="price-single__title">Incluye:</div>
@@ -523,6 +608,59 @@
     </div>
   </section>
 
+  <!-- SOLICITAR ACCESO (FORMULARIO) -->
+  <section class="access" id="solicitar">
+    <div class="container access__inner">
+      <div class="access__text">
+        <div class="label-chip label-chip--teal">Solicitar acceso</div>
+        <h2 class="section-title">Cuéntanos sobre ti<br>y te explicamos los pasos</h2>
+        <p class="section-body">Déjanos tus datos y un fiscalista de Incoming Tax se pondrá en contacto contigo para explicarte cómo darte de alta y empezar a despreocuparte de tu fiscalidad.</p>
+        <ul class="access__points">
+          <li><span>✓</span> Sin compromiso ni permanencia</li>
+          <li><span>✓</span> Te guiamos en el alta paso a paso</li>
+          <li><span>✓</span> Resolvemos todas tus dudas antes de empezar</li>
+        </ul>
+      </div>
+      <div class="access__form-wrap">
+        <!-- IMPORTANTE: sustituir TU_ID_FORMSPREE por el ID real de formspree.io -->
+        <form class="access-form" id="accessForm" action="https://formspree.io/f/TU_ID_FORMSPREE" method="POST">
+          <div class="access-form__row">
+            <label>Nombre y apellidos
+              <input type="text" name="nombre" required placeholder="Tu nombre" />
+            </label>
+          </div>
+          <div class="access-form__row access-form__row--2">
+            <label>Email
+              <input type="email" name="email" required placeholder="tucorreo@email.com" />
+            </label>
+            <label>Teléfono
+              <input type="tel" name="telefono" placeholder="600 000 000" />
+            </label>
+          </div>
+          <div class="access-form__row">
+            <label>¿Cómo trabajas?
+              <select name="tipo">
+                <option value="Autónomo">Autónomo</option>
+                <option value="Pyme / Sociedad">Pyme / Sociedad</option>
+                <option value="Aún no estoy dado de alta">Aún no estoy dado de alta</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </label>
+          </div>
+          <div class="access-form__row">
+            <label>¿En qué te podemos ayudar? <span class="opt">(opcional)</span>
+              <textarea name="mensaje" rows="3" placeholder="Cuéntanos brevemente tu situación..."></textarea>
+            </label>
+          </div>
+          <input type="hidden" name="_subject" value="Nueva solicitud de acceso · Incoming Tax" />
+          <button type="submit" class="btn btn--primary btn--full btn--xl">Solicitar acceso →</button>
+          <p class="access-form__legal">Al enviar aceptas que te contactemos sobre Incoming Tax. Tratamos tus datos según el RGPD.</p>
+          <p class="access-form__msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="final-cta__glow"></div>
@@ -533,7 +671,7 @@
       </div>
       <h2 class="final-cta__title">Tu fiscalidad,<br>al fin sencilla.</h2>
       <p class="final-cta__sub">Deja que la IA haga el trabajo. Tú solo arrastra las facturas.</p>
-      <a href="#precios" class="btn btn--primary btn--xl">
+      <a href="#solicitar" class="btn btn--primary btn--xl">
         Solicitar acceso
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>

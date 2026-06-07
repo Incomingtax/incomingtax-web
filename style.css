@@ -633,6 +633,7 @@ button { cursor: pointer; font-family: var(--font); }
 .price-card__name { font-size: 16px; font-weight: 700; color: var(--text-2); margin-bottom: 14px; }
 .price-card__price { font-size: 44px; font-weight: 900; letter-spacing: -0.04em; color: var(--white); margin-bottom: 4px; }
 .price-card__price span { font-size: 18px; font-weight: 500; color: var(--text-2); }
+.price-card__price .price-card__plus { font-size: 30px; font-weight: 800; color: var(--white); }
 .price-card__sub { font-size: 12px; color: var(--text-3); }
 .price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
 .price-features li { font-size: 14px; display: flex; align-items: center; gap: 9px; }

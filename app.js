@@ -195,13 +195,17 @@ document.querySelectorAll('.faq-item summary').forEach(s => {
   const dotsBox = carousel.querySelector('.vc-dots');
   const modal = document.getElementById('vcModal');
   const modalVideo = document.getElementById('vcModalVideo');
-  let idx = 0, timer = null;
+  let idx = 0, activo = false;
 
   slides.forEach((s, i) => {
     const d = document.createElement('button');
     d.setAttribute('aria-label', 'Ver vídeo ' + (i + 1));
-    d.addEventListener('click', () => { go(i); restart(); });
+    d.addEventListener('click', () => go(i));
     dotsBox.appendChild(d);
+    // Al acabar cada teaser encadena con el siguiente
+    s.querySelector('video').addEventListener('ended', () => {
+      if (activo && i === idx) go(idx + 1);
+    });
   });
   const dots = dotsBox.querySelectorAll('button');
 
@@ -210,36 +214,43 @@ document.querySelectorAll('.faq-item summary').forEach(s => {
     slides.forEach((s, i) => {
       s.classList.toggle('on', i === idx);
       const v = s.querySelector('video');
-      if (i === idx) { v.play().catch(() => {}); } else { v.pause(); }
+      if (i === idx) {
+        v.currentTime = 0;
+        if (activo) v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
     });
     dots.forEach((d, i) => d.classList.toggle('on', i === idx));
   }
-  function restart() { clearInterval(timer); timer = setInterval(() => go(idx + 1), 8000); }
 
-  carousel.querySelector('.vc-arrow--prev').addEventListener('click', () => { go(idx - 1); restart(); });
-  carousel.querySelector('.vc-arrow--next').addEventListener('click', () => { go(idx + 1); restart(); });
+  carousel.querySelector('.vc-arrow--prev').addEventListener('click', () => go(idx - 1));
+  carousel.querySelector('.vc-arrow--next').addEventListener('click', () => go(idx + 1));
 
   slides.forEach(s => s.addEventListener('click', () => {
     modalVideo.src = s.dataset.full;
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
-    clearInterval(timer);
+    activo = false;
+    slides.forEach(x => x.querySelector('video').pause());
     modalVideo.play().catch(() => {});
   }));
   function closeModal() {
     modalVideo.pause(); modalVideo.src = '';
     modal.hidden = true;
     document.body.style.overflow = '';
-    restart();
+    activo = true;
+    go(idx);
   }
   modal.querySelector('.vc-modal__close').addEventListener('click', closeModal);
   modal.querySelector('.vc-modal__backdrop').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
 
-  // Solo reproducir teasers cuando el carrusel está en pantalla
+  // Solo reproducir cuando el carrusel está en pantalla
   const obs = new IntersectionObserver(es => es.forEach(e => {
-    if (e.isIntersecting) { go(idx); restart(); }
-    else { clearInterval(timer); slides.forEach(s => s.querySelector('video').pause()); }
+    activo = e.isIntersecting;
+    if (activo) { go(idx); }
+    else { slides.forEach(s => s.querySelector('video').pause()); }
   }), { threshold: 0.3 });
   obs.observe(carousel);
 })();

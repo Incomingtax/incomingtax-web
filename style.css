@@ -1019,3 +1019,6 @@ button { cursor: pointer; font-family: var(--font); }
   .vc-arrow--prev { left: 8px; } .vc-arrow--next { right: 8px; }
   .vc-caption { font-size: 12px; padding: 6px 12px; }
 }
+
+/* Segunda línea del subtítulo del hero, separada */
+.hero__sub-line2 { display: inline-block; margin-top: 14px; }

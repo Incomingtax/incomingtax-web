@@ -228,6 +228,7 @@ document.querySelectorAll('.faq-item summary').forEach(s => {
   carousel.querySelector('.vc-arrow--next').addEventListener('click', () => go(idx + 1));
 
   slides.forEach(s => s.addEventListener('click', () => {
+    if (moved) { moved = false; return; }
     modalVideo.src = s.dataset.full;
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -245,6 +246,25 @@ document.querySelectorAll('.faq-item summary').forEach(s => {
   modal.querySelector('.vc-modal__close').addEventListener('click', closeModal);
   modal.querySelector('.vc-modal__backdrop').addEventListener('click', closeModal);
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+  // Deslizar con el dedo (o arrastrar con el ratón) para cambiar de vídeo
+  let x0 = null;
+  const track = carousel.querySelector('.vc-track');
+  track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) { go(dx < 0 ? idx + 1 : idx - 1); moved = true; }
+    x0 = null;
+  });
+  let mx = null, moved = false;
+  track.addEventListener('mousedown', e => { mx = e.clientX; moved = false; });
+  track.addEventListener('mouseup', e => {
+    if (mx === null) return;
+    const dx = e.clientX - mx;
+    if (Math.abs(dx) > 45) { go(dx < 0 ? idx + 1 : idx - 1); moved = true; }
+    mx = null;
+  });
 
   // Solo reproducir cuando el carrusel está en pantalla
   const obs = new IntersectionObserver(es => es.forEach(e => {

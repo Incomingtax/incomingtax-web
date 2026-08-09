@@ -274,3 +274,45 @@ document.querySelectorAll('.faq-item summary').forEach(s => {
   }), { threshold: 0.3 });
   obs.observe(carousel);
 })();
+
+/* ---- Carrusel de la sección "En acción" (dos vídeos con controles) ---- */
+(function () {
+  const car = document.getElementById('demoCarousel');
+  if (!car) return;
+  const slides = car.querySelectorAll('.dc-slide');
+  const dotsBox = car.querySelector('.dc-dots');
+  let idx = 0;
+
+  slides.forEach((s, i) => {
+    const d = document.createElement('button');
+    d.setAttribute('aria-label', 'Ver vídeo ' + (i + 1));
+    d.addEventListener('click', () => ir(i));
+    dotsBox.appendChild(d);
+  });
+  const dots = dotsBox.querySelectorAll('button');
+
+  function ir(n) {
+    idx = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => {
+      s.classList.toggle('is-on', i === idx);
+      const v = s.querySelector('video');
+      if (i !== idx && v) { v.pause(); }   // al cambiar, callar el que se va
+    });
+    dots.forEach((d, i) => d.classList.toggle('on', i === idx));
+  }
+  ir(0);
+
+  car.querySelector('.dc-arrow--prev').addEventListener('click', () => ir(idx - 1));
+  car.querySelector('.dc-arrow--next').addEventListener('click', () => ir(idx + 1));
+
+  // Deslizar con el dedo
+  let x0 = null;
+  const track = car.querySelector('.dc-track');
+  track.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) ir(dx < 0 ? idx + 1 : idx - 1);
+    x0 = null;
+  });
+})();

@@ -117,12 +117,24 @@
         <h2 class="section-title">Mira Incoming Tax en funcionamiento</h2>
         <p class="section-body" style="max-width:560px;margin:0 auto">Sube una factura arrastrándola y observa cómo la IA la lee y la registra en segundos.</p>
       </div>
-      <div class="video-frame">
-        <div class="video-player" id="videoPlayer">
-          <video id="appVideo" controls preload="metadata" playsinline poster="poster.jpg">
-            <source src="demo.mp4" type="video/mp4" />
-          </video>
+      <div class="demo-carousel" id="demoCarousel">
+        <button class="dc-arrow dc-arrow--prev" aria-label="Vídeo anterior">&#8249;</button>
+        <div class="dc-track">
+          <div class="dc-slide is-on">
+            <video class="dc-video" controls preload="metadata" playsinline poster="poster.jpg">
+              <source src="demo.mp4" type="video/mp4" />
+            </video>
+            <p class="dc-pie">Sube una factura y la IA la lee y la registra en segundos</p>
+          </div>
+          <div class="dc-slide">
+            <video class="dc-video" controls preload="metadata" playsinline poster="videos/demo-app-poster.jpg">
+              <source src="videos/demo-app.mp4" type="video/mp4" />
+            </video>
+            <p class="dc-pie">Recorrido por la aplicación, explicado paso a paso</p>
+          </div>
         </div>
+        <button class="dc-arrow dc-arrow--next" aria-label="Vídeo siguiente">&#8250;</button>
+        <div class="dc-dots" role="tablist"></div>
       </div>
     </div>
   </section>
